@@ -1,0 +1,432 @@
+body{
+  background-color: black;
+  margin: 0px;
+}
+
+/* Dark Gray - #404040 */
+/* Gold - #b38600 */
+
+@font-face {
+    font-family: 'RuneScape Plain 11';
+    src: url('Fonts/RuneScape-Plain-11.eot');
+    src: url('Fonts/RuneScape-Plain-11.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/RuneScape-Plain-11.woff2') format('woff2'),
+        url('Fonts/RuneScape-Plain-11.woff') format('woff'),
+        url('Fonts/RuneScape-Plain-11.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RuneScape Bold 12';
+    src: url('Fonts/RuneScape-Bold-12.eot');
+    src: url('Fonts/RuneScape-Bold-12.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/RuneScape-Bold-12.woff2') format('woff2'),
+        url('Fonts/RuneScape-Bold-12.woff') format('woff'),
+        url('Fonts/RuneScape-Bold-12.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RuneScape Plain 12';
+    src: url('Fonts/RuneScape-Plain-12.eot');
+    src: url('Fonts/RuneScape-Plain-12.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/RuneScape-Plain-12.woff2') format('woff2'),
+        url('Fonts/RuneScape-Plain-12.woff') format('woff'),
+        url('Fonts/RuneScape-Plain-12.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+#tooltipWrapper {
+    display: none;
+    background-color: #404040;
+    color: #b38600;
+    width: 309px;
+    margin: auto;
+    padding: 6px 5px 1px 5px;
+    border-radius: 8px;
+}
+
+#slot_weapon {
+  position: absolute;
+  left: 62px;
+  top: 105px;
+}
+
+#slot_shield {
+  position: absolute;
+  left: 202px;
+  top: 105px;
+}
+
+#slot_head {
+  position: absolute;
+  left: 132px;
+  top: 15px;
+}
+
+#slot_neck {
+  position: absolute;
+  left: 132px;
+  top: 60px;
+}
+
+#slot_cape {
+  position: absolute;
+  left: 82px;
+  top: 60px;
+}
+
+#slot_ammo {
+  position: absolute;
+  left: 182px;
+  top: 60px;
+}
+
+#slot_body {
+  position: absolute;
+  left: 132px;
+  top: 105px;
+}
+
+#slot_legs {
+  position: absolute;
+  left: 132px;
+  top: 150px;
+}
+
+#slot_feet {
+  position: absolute;
+  left: 132px;
+  top: 195px;
+}
+
+#slot_hands {
+  position: absolute;
+  left: 62px;
+  top: 195px;
+}
+
+#slot_ring {
+  position: absolute;
+  left: 202px;
+  top: 195px;
+}
+
+#inventoryWrapper {
+  background-color: #664b00;
+  height: 255px;
+  width: 300px;
+  position: relative;
+  border: solid 3px black;
+  border-radius: 10px;
+}
+
+#itemSearchContainer {
+    width: 350px;
+    border-radius: 10px;
+    background-color: #90ee90;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+#invSearchWrapper {
+    overflow-y: auto;
+    height: 400px;
+    width: 310px;
+    display: inline-block;
+    background-color: white;
+    border: solid 1px;
+}
+
+#inventoryContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+}
+
+#itemFilt {
+  width: 85%;
+  margin: 5px 0px 15px 5px;
+}
+
+#searchTabContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#slotSortPanel {
+    width: 32px;
+    background-color: #b3ffb3;
+    display: inline-block;
+    vertical-align: top;
+    border: solid 1px black;
+}
+
+
+#slotIconContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1px 0 1px 0;
+}
+
+#tooltipInfoContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'RuneScape Bold 12';
+    font-size: 16px;
+    width: 100%;
+    margin: auto;
+    background-color: #b38600;
+    border-radius: 5px;
+}
+
+#tooltipCombatBonusContainer {
+    width: 214px;
+    display: inline-block;
+}
+
+#tooltipBonusContainer {
+    width: 90px;
+    margin: 0 0 0 5px;
+}
+
+#tooltipStatsContainer {
+    display: inline-flex;
+    margin: 5px 0 0 0;
+    font-family: 'RuneScape Bold 12';
+}
+
+#toolTipNameWrapper {
+    font-size: 22px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    margin: 4px auto 1px auto;
+    background-color: #404040;
+    border-radius: 5px;
+    padding: 2px;
+    border: 1px solid white;
+}
+
+#toolTipImgWrapper {
+    height: 100%;
+    width: 50px;
+    margin: 3px 0px 5px 3px;
+    background-color: white;
+    border-radius: 10%;
+    padding: 4px 4px 2px 5px;
+    border: solid 2px #404040;
+}
+
+#tooltipImg {
+    width: 100%;
+    height: 100%;
+}
+
+#tooltipTitleContainer {
+    width: 100%;
+}
+
+#headerSectionWrapper {
+    background-color: #404040;
+    height: 110px;
+    width: 100%;
+    border-bottom: solid 2px #b38660;
+}
+
+
+#BossSelectionGrid {
+    width: 85%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+
+.tooltipRowWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 3px 0;
+}
+
+.tooltipCombatHeader {
+    width: 57%;
+    background-color: #404040;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    padding: 2px 0 2px 0;
+    border: 1px solid white;
+}
+
+
+.invSlot {
+  height: 40px;
+  width: 40px;
+  background-color: #737373;
+  border-radius: 5px;
+}
+
+.itemImg {
+  padding: 6px;
+}
+
+.filterTileImg {
+  width: 40px;
+  height: 40px;
+}
+
+.itemSearchTab {
+  border: solid black 2px;
+  background-color: #bfbfbf;
+  cursor: pointer;
+}
+
+.slotFilterImg {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+
+.slotFilterIcons {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    padding: 3px 0px 3px 0px;
+}
+
+.tooltipCombatRow {
+    width: 100%;
+    background-color: #b38600;
+    padding: 5px 1px 5px 1px;
+    margin: 0px 0 5px 0;
+    border-radius: 5px;
+}
+
+.combatPill {
+    width: 34px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 3px 2px 1px 2px;
+    height: 70px;
+    border: solid 1px;
+}
+
+.combatPillImg {
+    width: 35px;
+}
+
+.combatPillStat {
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    background-color: #404040;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.combatPillPng{
+  width: 100%;
+  height: 100%;
+}
+
+.combatPillStatSpan {
+    display: inline-block;
+    vertical-align: sub;
+    font-weight: 100;
+    color: black;
+    font-family: 'RuneScape Bold 12';
+    font-size: 15px;
+    margin: 8px 0 0 0;
+}
+
+
+.tooltipCombatCol {
+    width: 90px;
+    background-color: #b38600;
+    padding: 5px 0 5px 0;
+    border-radius: 5px;
+    height: 217px;
+}
+
+.tooltipBonusHeader {
+    width: 92%;
+    background-color: #404040;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    padding: 2px 0 2px 0;
+    border: 1px solid white;
+}
+
+.tooltipPillContainer {
+    width: 100%;
+    background-color: #b38600;
+    display: inline-flex;
+    padding: 5px 0 1px 0;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+
+.bonusPill {
+    margin-top: 44px;
+}
+
+.tooltipPillColContainer {
+    width: 100%;
+    background-color: #b38600;
+    display: inline-flex;
+    padding: 5px 0 5px 0;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
+.tooltipLineData {
+    background-color: #404040;
+    padding: 3px;
+    border-radius: 5px;
+    width: 95%;
+    margin: 1px auto 4px auto;
+    color: white;
+    border: 1px solid white;
+}
+
+.bossTile {
+    width: 250px;
+    height: 100%;
+    padding: 0px;
+    border: solid white;
+}
+
+.gridImg {
+    width: 80%;
+    height: 200px;
+    padding: 25px 25px 5px 25px;
+}
+
+.bossTitle {
+    color: white;
+    font-family: 'RuneScape Bold 12';
+    margin: 5px 0 5px 0;
+    text-align: center;
+    font-size: 18px;
+}

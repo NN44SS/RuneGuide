@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Rune Guide</title>
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ <link href="style.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+ <script type="text/javascript" src="Scripts/Boss.js"></script>
+ <script type="text/javascript" src="Scripts/itemSearch.js"></script>
+ <script type="text/javascript" src="Scripts/toolTip.js"></script>
+ <script type="text/javascript" src="Scripts/tabFilter.js"></script>
+  <script type="text/javascript" src="Scripts/helperFunctions.js"></script>
+
+</head>
+
+<script type="text/javascript">
+
+
+  // getItems();
+
+  function bossGridReset() {
+
+    var vorkLink = document.getElementById("vorkathTile");
+    var zulLink = document.getElementById("zulrahTile");
+    var krakLink = document.getElementById("krakenTile");
+    var test = document.getElementById("bossImgWrapper");
+    //Clear the BossWrapper and content when the grid button is clicked.
+    clearDiv("bossImgWrapper");
+    clearDiv("bossInfoWrapper");
+
+    //Show the Boss Grid when the button is clicked.
+    var bossGridContainer = document.getElementById("BossSelectionGrid");
+    bossGridContainer.style.display = "flex";
+  }
+
+
+  function bossSelect(bossID) {
+    var bossGridContainer = document.getElementById("BossSelectionGrid");
+    bossGridContainer.style.display = "none";
+
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "Scripts/Boss.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+
+    createBossPortrait(bossID);
+    createBossInfo(bossID);
+
+    var bossGridContainer = document.getElementById("bossInfoWrapper");
+    bossGridContainer.style.display = "inline";
+
+    var bossContainer = document.getElementById("bossImgWrapper");
+    bossContainer.style.display = "inline";
+  }
+
+
+  function clearDiv(elementID) {
+    //Clear contents of an element
+    document.getElementById(elementID).innerHTML = '';
+  }
+
+
+  function dragstart_handler(ev) {
+    // Add the target element's id to the data transfer object
+    ev.dataTransfer.setData("application/my-app", ev.target.id);
+    ev.dataTransfer.dropEffect = "copy";
+  }
+
+
+  function dragover_handler(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "copy";
+  }
+
+
+  function drop_handler(ev) {
+    ev.preventDefault();
+    // Get the id of the target and add the moved element to the target's DOM
+    const data = ev.dataTransfer.getData("application/my-app");
+    //If target already has an element, clear it before drop
+
+    console.log(ev.target);
+    var nodeCopy = document.getElementById(data).cloneNode(true);
+    nodeCopy.id = "drag" + "_" + data;
+    ev.target.appendChild(nodeCopy);
+  }
+
+  function tabFilter(id){
+    var invSearchDiv = document.getElementById('invSearchWrapper');
+    clearDiv('invSearchWrapper');
+    var filterType = id;
+    if (filterType == 'tabArmourMage'){
+      filterResults_Armour_Mage();
+    }else if (filterType == 'tabArmourMel') {
+      filterResults_Armour_Mel();
+    }else if (filterType == 'tabArmourRange') {
+      filterResults_Armour_Range();
+    }
+  }
+
+</script>
+
+<body>
+
+<header>
+    <div id="headerSectionWrapper">
+
+    </div>
+</header>
+
+<content>
+<div id="bossGridWrapper">
+  <div id="BossSelectionGrid">
+  </div>
+</div>
+
+<div id="bossSectionWrapper">
+  <div class="">
+
+  </div>
+</div>
+
+
+
+
+
+  <!-- <div id="inventoryContainer">
+    <div id="itemSearchContainer">
+      <input type="text" id="itemFilt" onkeyup="filterItems();" placeholder="Search Item...">
+      <div id="invSearchWrapper"></div>
+      <div id="slotSortPanel">
+        <div id="slotIconContainer">
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'head')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_head.png" class="slotFilterImg" /></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'cape')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_cape.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'neck')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_neck.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'ammo')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_ammo.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'body')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_body.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'weapon')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_weapon.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'shield')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_shield.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'legs')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_legs.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'hands')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_hands.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'feet')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_feet.png" class="slotFilterImg"/></div>
+          <div class="slotFilterIcons" onclick="slotFilter(this, 'ring')" onmouseover="onSlotHover(this)" onmouseout="onSlotExit(this)"><img src="Images/EquipSlotPng/equip_slot_ring.png" class="slotFilterImg"/></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="inventoryWrapper">
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_weapon"><img src="Images/EquipSlotPng/equip_slot_weapon.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_shield"><img src="Images/EquipSlotPng/equip_slot_shield.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_cape"><img src="Images/EquipSlotPng/equip_slot_cape.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_ammo"><img src="Images/EquipSlotPng/equip_slot_ammo.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_hands"><img src="Images/EquipSlotPng/equip_slot_hands.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_ring"><img src="Images/EquipSlotPng/equip_slot_ring.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_head"><img src="Images/EquipSlotPng/equip_slot_head.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_neck"><img src="Images/EquipSlotPng/equip_slot_neck.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_body"><img src="Images/EquipSlotPng/equip_slot_body.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_legs"><img src="Images/EquipSlotPng/equip_slot_legs.png" class="equipSlotImg"/></div>
+      <div class="invSlot" ondragover="dragover_handler(event)" ondrop="drop_handler(event)" id="slot_feet"><img src="Images/EquipSlotPng/equip_slot_feet.png" class="equipSlotImg"/></div>
+    </div>
+  </div> -->
+
+  <!-- <button class="gridBtn" onclick="bossGridReset();">Boss</button> -->
+
+</content>
+
+<div id="tooltipWrapper">
+  <div id=tooltipInfoContainer>
+    <div class="tooltipRowWrapper">
+      <div id="toolTipImgWrapper"></div><!-- populated through toolTip.js -->
+      <div id="tooltipTitleContainer">
+          <div id="toolTipNameWrapper"></div><!-- populated through toolTip.js -->
+      </div>
+    </div>
+    <div class="tooltipRowWrapper tooltipLineData">
+      <div class="itemTooltipLbl"><span>Equipable:</span></div>
+      <div class="itemTooltipData" id="ttDataEquip"></div><!-- populated through toolTip.js -->
+    </div>
+    <div class="tooltipRowWrapper tooltipLineData">
+      <div class="itemTooltipLbl"><span>Members:</span></div>
+      <div class="itemTooltipData" id="ttDataMemb"></div><!-- populated through toolTip.js -->
+    </div>
+    <div class="tooltipRowWrapper tooltipLineData">
+      <div class="itemTooltipLbl"><span>Stackable:</span></div>
+      <div class="itemTooltipData" id="ttDataStack"></div><!-- populated through toolTip.js -->
+    </div>
+    <div class="tooltipRowWrapper tooltipLineData">
+      <div class="itemTooltipLbl"><span>High Alchemy:</span></div>
+      <div class="itemTooltipData" id="ttDataLowAlch"></div><!-- populated through toolTip.js -->
+    </div>
+    <div class="tooltipRowWrapper tooltipLineData">
+      <div class="itemTooltipLbl"><span>Low Alchemy:</span></div>
+      <div class="itemTooltipData" id="ttDataHighAlch"></div><!-- populated through toolTip.js -->
+    </div>
+  </div>
+
+  <div id="tooltipStatsContainer">
+      <div id=tooltipCombatBonusContainer>
+        <div class="tooltipCombatRow">
+          <div class="tooltipCombatHeader">
+            <span>Offense</span>
+          </div>
+          <div class="tooltipPillContainer">
+            <div class="combatPill">
+                <div class="combatPillImg">
+                  <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                </div>
+                <div class="combatPillStat">
+                  <div id="ttDataOffStab" class="combatPillStatSpan"></div>
+                </div>
+            </div>
+            <div class="combatPill">
+                <div class="combatPillImg">
+                  <img src="Images/TooltipPng/tooltip_image_slash.png" class="combatPillPng"/>
+                </div>
+                <div class="combatPillStat">
+                  <div id="ttDataOffSlash" class="combatPillStatSpan"></div>
+                </div>
+            </div>
+            <div class="combatPill">
+                <div class="combatPillImg">
+                  <img src="Images/TooltipPng/tooltip_image_crush.png" class="combatPillPng"/>
+                </div>
+                <div class="combatPillStat">
+                  <div id="ttDataOffCrush" class="combatPillStatSpan"></div>
+                </div>
+            </div>
+            <div class="combatPill">
+                <div class="combatPillImg">
+                  <img src="Images/TooltipPng/tooltip_image_mage.png" class="combatPillPng"/>
+                </div>
+                <div class="combatPillStat">
+                  <div id="ttDataOffMage" class="combatPillStatSpan"></div>
+                </div>
+            </div>
+            <div class="combatPill">
+                <div class="combatPillImg">
+                  <img src="Images/TooltipPng/tooltip_image_range.png" class="combatPillPng"/>
+                </div>
+                <div class="combatPillStat">
+                  <div id="ttDataOffRange" class="combatPillStatSpan"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tooltipCombatRow">
+          <div class="tooltipCombatHeader">
+            <span>Defense</span>
+          </div>
+        <div class="tooltipPillContainer">
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataDefStab" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_slash.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataDefSlash" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_crush.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataDefCrush" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_mage.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataDefMage" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_range.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataDefRange" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div id="tooltipBonusContainer">
+        <div class="tooltipCombatCol">
+          <div class="tooltipBonusHeader">
+            <span>Bonus</span>
+          </div>
+          <div class="tooltipPillColContainer">
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_combat_power.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataBonusCom" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_range_power.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                <div id="ttDataBonusRange" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill bonusPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_mage_power.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                  <div id="ttDataBonusMage" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+          <div class="combatPill bonusPill">
+              <div class="combatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_prayer_power.png" class="combatPillPng"/>
+              </div>
+              <div class="combatPillStat">
+                  <div id="ttDataBonusPrayer" class="combatPillStatSpan"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <span class="osrstooltip" id='11806' title='Please wait ...'>[Saradomin godsword]</span> -->
+ <!-- 3331 -->
+
+<script type="text/javascript" src="Scripts/Boss.js"></script>
+<script type="text/javascript" src="Scripts/itemSearch.js"></script>
+</body>
+</html>
