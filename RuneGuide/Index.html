@@ -22,6 +22,7 @@
 
 
   // getItems();
+  initBossData();
 
   function bossGridReset() {
 
@@ -120,12 +121,108 @@
 </div>
 
 <div id="bossSectionWrapper">
-  <div class="">
+  <div id="bossPanelContainer">
+    <div id="bossContentLeft">
+      <div id="bossImgContainer"></div>
+    </div>
+    <div id="bossContentRight">
+      <div id="bossTitleContainer"></div>
+    <!-- Boss Info Panel -->
+
+      <div id="bossInfoContainer">
+        <div class="bossPanel">
+          <div id="bossPanelComStats">
+            <div class="bossPanelComHeaders">
+              <span>Combat Stats</span>
+            </div>
+            <div class="bossPanelComPillContainer">
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComHitpoints" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComAttLvl" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComStengthLvl" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComdefenceLvl" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComMageLvl" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+              <div class="combatPill">
+                  <div class="combatPillImg">
+                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
+                  </div>
+                  <div class="combatPillStat">
+                    <div id="bpDataComRangedLvl" class="combatPillStatSpan"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bossPanel">
+          <div id="bossPanelGenInfo">
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelComLvl"><span>Combat level:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelMemb"><span>Members:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelExam"><span>Examine:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelMaxHit"><span>Max hit:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelAggro"><span>Aggressive:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelPois"><span>Poison:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelAttType"><span>Attack type:</span></div>
+            </div>
+            <div class="bossPanelInfoRow">
+              <div id="bossPanelAttSpeed"><span>Attack speed:</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="bossPanel">
+
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
-
-
 
 
 
@@ -251,7 +348,7 @@
 
         <div class="tooltipCombatRow">
           <div class="tooltipCombatHeader">
-            <span>Defense</span>
+            <span>defence</span>
           </div>
         <div class="tooltipPillContainer">
           <div class="combatPill">

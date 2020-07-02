@@ -138,11 +138,11 @@ function populateToolTip(itemID){
         var itemOffCrush_TT = checkforUndefined(itemList[i]._items[z].equipment.attack_crush);
         var itemOffMage_TT = checkforUndefined(itemList[i]._items[z].equipment.attack_magic);
         var itemOffRanged_TT = checkforUndefined(itemList[i]._items[z].equipment.attack_ranged);
-        var itemDefStab_TT = checkforUndefined(itemList[i]._items[z].equipment.defense_stab);
-        var itemDefSlash_TT = checkforUndefined(itemList[i]._items[z].equipment.defense_slash);
-        var itemDefCrush_TT = checkforUndefined(itemList[i]._items[z].equipment.defense_crush);
-        var itemDefMage_TT = checkforUndefined(itemList[i]._items[z].equipment.defense_magic);
-        var itemDefRanged_TT = checkforUndefined(itemList[i]._items[z].equipment.defense_ranged);
+        var itemDefStab_TT = checkforUndefined(itemList[i]._items[z].equipment.defence_stab);
+        var itemDefSlash_TT = checkforUndefined(itemList[i]._items[z].equipment.defence_slash);
+        var itemDefCrush_TT = checkforUndefined(itemList[i]._items[z].equipment.defence_crush);
+        var itemDefMage_TT = checkforUndefined(itemList[i]._items[z].equipment.defence_magic);
+        var itemDefRanged_TT = checkforUndefined(itemList[i]._items[z].equipment.defence_ranged);
         var itemBonCom_TT = checkforUndefined(itemList[i]._items[z].equipment.melee_strength);
         var itemBonRanged_TT = checkforUndefined(itemList[i]._items[z].equipment.ranged_strength);
         var itemBonMage_TT = checkforUndefined(itemList[i]._items[z].equipment.magic_damage);

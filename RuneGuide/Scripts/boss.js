@@ -165,8 +165,127 @@ function setBossImgSrc(monsterId){
   return imgSrc;
 }
 
-function selectBoss(ev){
+//Runs when the user selects a boss from the grid
+function selectBoss(ev) {
   var bossGridWrapper = document.getElementById('bossGridWrapper');
-  var monsterId = ev.id;
-  bossGridWrapper.style.display = "none";
+  var bossId = ev.id;
+
+
+  for (let i = 0; i < monsterList.length; i++) {
+    var innerArray = monsterList[i]._items.length;
+    for (let z = 0; z < innerArray; z++) {
+      var monsterName = monsterList[i]._items[z].name;
+      var monsterId = monsterList[i]._items[z].id;
+      var monsterMembers = monsterList[i]._items[z].members;
+      var monsterComLvl = monsterList[i]._items[z].combat_level;
+      var monsterExamine = monsterList[i]._items[z].examine;
+      var monsterMaxHit = monsterList[i]._items[z].max_hit;
+      var monsterAggressive = monsterList[i]._items[z].aggressive;
+      var monsterPoisonous = monsterList[i]._items[z].poisonous;
+      var monsterAttType = getAttackTypes(monsterId);
+      var monsterAttSpeed = monsterList[i]._items[z].attack_speed;
+      var monsterHitPoints = monsterList[i]._items[z].hitpoints;
+      var monsterAttLvl = monsterList[i]._items[z].attack_level;
+      var monsterMeleeLvl = monsterList[i]._items[z].strength_level;
+      var monsterDefLvl = monsterList[i]._items[z].defence_level;
+      var monsterMageLvl = monsterList[i]._items[z].magic_level;
+      var monsterRangedLvl = monsterList[i]._items[z].ranged_level;
+      var monsterDefStab = monsterList[i]._items[z].defence_stab;
+      var monsterDefSlash = monsterList[i]._items[z].defence_slash;
+      var monsterDefCrush = monsterList[i]._items[z].defence_crush;
+      var monsterDefMage = monsterList[i]._items[z].defence_magic;
+      var monsterDefRanged = monsterList[i]._items[z].defence_ranged;
+      var monsterBonMeleeStrength = monsterList[i]._items[z].melee_strength;
+      var monsterBonMagicStrength = monsterList[i]._items[z].magic_strength;
+      var monsterBonRangedStrength = monsterList[i]._items[z].ranged_strength;
+      if (bossId == monsterId) {
+      //If bossID matches a monster in the list
+      bossGridWrapper.style.display = "none";
+      populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl, monsterExamine, monsterMaxHit,
+                        monsterAggressive, monsterPoisonous, monsterAttType, monsterAttSpeed, monsterHitPoints,
+                        monsterAttLvl, monsterMeleeLvl, monsterDefLvl, monsterMageLvl, monsterRangedLvl,
+                        monsterDefStab, monsterDefSlash, monsterDefCrush, monsterDefMage, monsterDefRanged,
+                        monsterBonMeleeStrength, monsterBonMagicStrength, monsterBonRangedStrength);
+      }
+    }
+  }
+}
+
+
+//Fill the values on the page by using the boss info passed from boss selection
+function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl, monsterExamine, monsterMaxHit,
+                  monsterAggressive, monsterPoisonous, monsterAttType, monsterAttSpeed, monsterHitPoints,
+                  monsterAttLvl, monsterMeleeLvl, monsterDefLvl, monsterMageLvl, monsterRangedLvl,
+                  monsterDefStab, monsterDefSlash, monsterDefCrush, monsterDefMage, monsterDefRanged,
+                  monsterBonMeleeStrength, monsterBonMagicStrength, monsterBonRangedStrength)
+{
+
+  var bossSectionWrapper = document.getElementById('bossSectionWrapper');
+  var bossImgContainer = document.getElementById('bossImgContainer');
+  var bossTitleContainer = document.getElementById('bossTitleContainer');
+
+  var div_bpDataComHitpoints = document.getElementById('bpDataComHitpoints');
+  var div_bpDataComAttLvl = document.getElementById('bpDataComAttLvl');
+  var div_bpDataComStengthLvl = document.getElementById('bpDataComStengthLvl');
+  var div_bpDataComdefenceLvl = document.getElementById('bpDataComdefenceLvl');
+  var div_bpDataComMageLvl = document.getElementById('bpDataComMageLvl');
+  var div_bpDataComRangedLvl = document.getElementById('bpDataComRangedLvl');
+
+
+  bossSectionWrapper.style.display = "inline";
+
+  var monsterImg = document.createElement('img');
+  var imgSrc = setBossImgSrc(monsterId);
+  monsterImg.src = imgSrc;
+  monsterImg.setAttribute('alt', monsterName);
+  monsterImg.setAttribute('class', 'bossSpotlightImg');
+
+  var bossTitleText = document.createElement("span");
+  bossTitleText.setAttribute('class', "bossSpotlightTxt")
+  bossTitleText.innerHTML = monsterName;
+
+  var span_Hitpoints = document.createElement("span");
+  span_Hitpoints.innerHTML = monsterHitPoints;
+  var span_AttLvl = document.createElement("span");
+  span_AttLvl.innerHTML = monsterAttLvl;
+  var span_MeleeLvl = document.createElement("span");
+  span_MeleeLvl.innerHTML = monsterMeleeLvl;
+  var span_DefLvl = document.createElement("span");
+  span_DefLvl.innerHTML = monsterDefLvl;
+  var span_MageLvl = document.createElement("span");
+  span_MageLvl.innerHTML = monsterMageLvl;
+  var span_RangedLvl = document.createElement("span");
+  span_RangedLvl.innerHTML = monsterRangedLvl;
+
+
+  bossImgContainer.appendChild(monsterImg);
+  bossTitleContainer.appendChild(bossTitleText);
+  div_bpDataComHitpoints.appendChild(span_Hitpoints);
+  div_bpDataComAttLvl.appendChild(span_AttLvl);
+  div_bpDataComStengthLvl.appendChild(span_MeleeLvl);
+  div_bpDataComdefenceLvl.appendChild(span_DefLvl);
+  div_bpDataComMageLvl.appendChild(span_MageLvl);
+  div_bpDataComRangedLvl.appendChild(span_RangedLvl);
+}
+
+//Get the attack types from the nested array and return them in string format.
+function getAttackTypes(monsterId){
+  for (let i = 0; i < monsterList.length; i++) {
+    var innerArray = monsterList[i]._items.length;
+    for (let z = 0; z < innerArray; z++) {
+      var loopMonsterId = monsterList[i]._items[z].id;
+      if (monsterId == loopMonsterId) {
+        var typeLength = monsterList[i]._items[z].attack_type.length;
+        var attackTypeString = "";
+        var x = 0;
+        while (x < typeLength) {
+          var attString = monsterList[i]._items[z].attack_type[x];
+          attackTypeString += attString + ', ';
+          x++;
+        }
+      }
+    }
+  }
+  var returnString = attackTypeString.slice(0, -2);
+  return returnString;
 }

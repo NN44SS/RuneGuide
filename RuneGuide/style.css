@@ -1,6 +1,11 @@
+html {
+  font-size: 75%; // 12px
+}
+
 body{
   background-color: black;
   margin: 0px;
+  font-size: 1rem; // 12px
 }
 
 /* Dark Gray - #404040 */
@@ -255,6 +260,55 @@ body{
     flex-wrap: wrap;
 }
 
+#bossSectionWrapper {
+    display: none;
+    color: white;
+}
+
+#bossPanelContainer {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'RuneScape Bold 12';
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    border: solid 1px white;
+}
+
+#bossContentLeft {
+    padding: 20px;
+}
+
+#bossContentRight {
+
+}
+
+#bossImgContainer {
+    height: 100%;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+#bossTitleContainer {
+    font-size: 6rem;
+    text-align: center;
+    padding: 20px;
+}
+
+#bossInfoContainer {
+    display: flex;
+    background-color: #b38600;
+    flex-wrap: wrap;
+}
+
+.bossPanelComPillContainer {
+  width: 100%;
+  background-color: #b38600;
+  display: inline-flex;
+  padding: 5px 0 1px 0;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
 
 .tooltipRowWrapper {
     display: flex;
@@ -334,7 +388,7 @@ body{
 }
 
 .combatPillStat {
-    width: 35px;
+    width: 34px;
     height: 30px;
     text-align: center;
     background-color: #404040;
@@ -351,9 +405,9 @@ body{
     display: inline-block;
     vertical-align: sub;
     font-weight: 100;
-    color: black;
+    color: white;
     font-family: 'RuneScape Bold 12';
-    font-size: 15px;
+    font-size: 14px;
     margin: 8px 0 0 0;
 }
 
@@ -429,4 +483,13 @@ body{
     margin: 5px 0 5px 0;
     text-align: center;
     font-size: 18px;
+}
+
+.bossSpotlightImg {
+    height: 100%;
+    width: 100%;
+}
+
+.bossPanel {
+
 }
