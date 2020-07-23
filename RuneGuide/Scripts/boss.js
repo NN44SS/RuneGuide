@@ -224,12 +224,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   var bossImgContainer = document.getElementById('bossImgContainer');
   var bossTitleContainer = document.getElementById('bossTitleContainer');
 
-  var div_bpDataComHitpoints = document.getElementById('bpDataComHitpoints');
-  var div_bpDataComAttLvl = document.getElementById('bpDataComAttLvl');
-  var div_bpDataComStengthLvl = document.getElementById('bpDataComStengthLvl');
-  var div_bpDataComdefenceLvl = document.getElementById('bpDataComdefenceLvl');
-  var div_bpDataComMageLvl = document.getElementById('bpDataComMageLvl');
-  var div_bpDataComRangedLvl = document.getElementById('bpDataComRangedLvl');
+
 
 
   bossSectionWrapper.style.display = "inline";
@@ -260,12 +255,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
 
   bossImgContainer.appendChild(monsterImg);
   bossTitleContainer.appendChild(bossTitleText);
-  div_bpDataComHitpoints.appendChild(span_Hitpoints);
-  div_bpDataComAttLvl.appendChild(span_AttLvl);
-  div_bpDataComStengthLvl.appendChild(span_MeleeLvl);
-  div_bpDataComdefenceLvl.appendChild(span_DefLvl);
-  div_bpDataComMageLvl.appendChild(span_MageLvl);
-  div_bpDataComRangedLvl.appendChild(span_RangedLvl);
+
 }
 
 //Get the attack types from the nested array and return them in string format.

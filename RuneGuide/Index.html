@@ -20,7 +20,6 @@
 
 <script type="text/javascript">
 
-
   // getItems();
   initBossData();
 
@@ -59,12 +58,10 @@
     bossContainer.style.display = "inline";
   }
 
-
   function clearDiv(elementID) {
     //Clear contents of an element
     document.getElementById(elementID).innerHTML = '';
   }
-
 
   function dragstart_handler(ev) {
     // Add the target element's id to the data transfer object
@@ -72,12 +69,10 @@
     ev.dataTransfer.dropEffect = "copy";
   }
 
-
   function dragover_handler(ev) {
     ev.preventDefault();
     ev.dataTransfer.dropEffect = "copy";
   }
-
 
   function drop_handler(ev) {
     ev.preventDefault();
@@ -131,63 +126,6 @@
 
       <div id="bossInfoContainer">
         <div class="bossPanel">
-          <div id="bossPanelComStats">
-            <div class="bossPanelComHeaders">
-              <span>Combat Stats</span>
-            </div>
-            <div class="bossPanelComPillContainer">
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComHitpoints" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComAttLvl" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComStengthLvl" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComdefenceLvl" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComMageLvl" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-              <div class="combatPill">
-                  <div class="combatPillImg">
-                    <img src="Images/TooltipPng/tooltip_image_stab.png" class="combatPillPng"/>
-                  </div>
-                  <div class="combatPillStat">
-                    <div id="bpDataComRangedLvl" class="combatPillStatSpan"></div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bossPanel">
           <div id="bossPanelGenInfo">
             <div class="bossPanelInfoRow">
               <div id="bossPanelComLvl"><span>Combat level:</span></div>
@@ -216,15 +154,17 @@
           </div>
         </div>
         <div class="bossPanel">
+        </div>
 
+        <div class="bossPanel">
+          <div class="bossPanelInfoRow">
+            <div id="bossPanelExam"><span>Examine:</span></div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-
-
 
   <!-- <div id="inventoryContainer">
     <div id="itemSearchContainer">
@@ -348,7 +288,7 @@
 
         <div class="tooltipCombatRow">
           <div class="tooltipCombatHeader">
-            <span>defence</span>
+            <span>Defence</span>
           </div>
         <div class="tooltipPillContainer">
           <div class="combatPill">
