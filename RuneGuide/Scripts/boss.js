@@ -224,38 +224,65 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   var bossImgContainer = document.getElementById('bossImgContainer');
   var bossTitleContainer = document.getElementById('bossTitleContainer');
 
+  //Find element locations in the DOM
+  var bossInfoComLvl = document.getElementById('bossComLvl');
+  var bossInfoHitPoints = document.getElementById('bossHitPoints');
+  var bossInfoMembers = document.getElementById('bossMembers');
+  var bossInfoExamine = document.getElementById('bossExamine');
+  var bossInfoMaxHit = document.getElementById('bossMaxHit');
+  var bossInfoAggressive = document.getElementById('bossAggressive');
+  var bossInfoPoisonous = document.getElementById('bossPoisonous');
+  var bossInfoAttType = document.getElementById('bossAttType');
+  var bossInfoAttSpeed = document.getElementById('bossAttSpeed');
 
 
-
+  //Display the Boss Wrapper
   bossSectionWrapper.style.display = "inline";
 
+  //populate boss image
   var monsterImg = document.createElement('img');
   var imgSrc = setBossImgSrc(monsterId);
   monsterImg.src = imgSrc;
   monsterImg.setAttribute('alt', monsterName);
   monsterImg.setAttribute('class', 'bossSpotlightImg');
 
+  //populate boss title to span
   var bossTitleText = document.createElement("span");
   bossTitleText.setAttribute('class', "bossSpotlightTxt")
   bossTitleText.innerHTML = monsterName;
 
+  //populate boss stats to span elements
+  var span_CombatLvl = document.createElement("span");
+  span_CombatLvl.innerHTML = monsterComLvl;
   var span_Hitpoints = document.createElement("span");
   span_Hitpoints.innerHTML = monsterHitPoints;
-  var span_AttLvl = document.createElement("span");
-  span_AttLvl.innerHTML = monsterAttLvl;
-  var span_MeleeLvl = document.createElement("span");
-  span_MeleeLvl.innerHTML = monsterMeleeLvl;
-  var span_DefLvl = document.createElement("span");
-  span_DefLvl.innerHTML = monsterDefLvl;
-  var span_MageLvl = document.createElement("span");
-  span_MageLvl.innerHTML = monsterMageLvl;
-  var span_RangedLvl = document.createElement("span");
-  span_RangedLvl.innerHTML = monsterRangedLvl;
+  var span_Members = document.createElement("span");
+  span_Members.innerHTML = monsterMembers;
+  var span_Examine = document.createElement("span");
+  span_Examine.innerHTML = monsterExamine;
+  var span_MaxHit = document.createElement("span");
+  span_MaxHit.innerHTML = monsterMaxHit;
+  var span_Aggresive = document.createElement("span");
+  span_Aggresive.innerHTML = monsterAggressive;
+  var span_Poisonous = document.createElement("span");
+  span_Poisonous.innerHTML = monsterPoisonous;
+  var span_AttType = document.createElement("span");
+  span_AttType.innerHTML = monsterAttType;
+  var span_AttSpeed = document.createElement("span");
+  span_AttSpeed.innerHTML = monsterAttSpeed;
 
-
+  //Append created elements above to the dom
   bossImgContainer.appendChild(monsterImg);
   bossTitleContainer.appendChild(bossTitleText);
-
+  bossInfoComLvl.appendChild(span_CombatLvl);
+  bossInfoHitPoints.appendChild(span_Hitpoints);
+  bossInfoMembers.appendChild(span_Members);
+  bossInfoExamine.appendChild(span_Examine);
+  bossInfoMaxHit.appendChild(span_MaxHit);
+  bossInfoAggressive.appendChild(span_Aggresive);
+  bossInfoPoisonous.appendChild(span_Poisonous);
+  bossInfoAttType.appendChild(span_AttType);
+  bossInfoAttSpeed.appendChild(span_AttSpeed);
 }
 
 //Get the attack types from the nested array and return them in string format.

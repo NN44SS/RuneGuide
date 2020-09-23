@@ -265,24 +265,6 @@ body{
     color: white;
 }
 
-#bossPanelContainer {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'RuneScape Bold 12';
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    border: solid 1px white;
-}
-
-#bossContentLeft {
-    padding: 20px;
-}
-
-#bossContentRight {
-
-}
-
 #bossImgContainer {
     height: 100%;
     max-width: 400px;
@@ -299,6 +281,28 @@ body{
     display: flex;
     background-color: #b38600;
     flex-wrap: wrap;
+}
+
+#bossStatsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#bossContentLeft{
+  flex: 30%;
+}
+
+#bossContentRight {
+    flex: 70%;
+}
+
+#bossPanelContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#bossGenStatsPillContainer {
+    display: flex;
 }
 
 .bossPanelComPillContainer {
@@ -490,12 +494,30 @@ body{
     width: 100%;
 }
 
-.bossPanel {
-
+.bossStatPanel {
+    background-color: coral;
+    min-width: 300px;
 }
 
+
+
+
+
+
+div#Testflex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.testSection {
+    width: 400px;
+    background-color: aquamarine;
+}
+
+
+
 @media screen and (max-width: 700px) {
-  #bossInfoContainer {
+  #bossContentRight, #bossContentLeft{
     flex-direction: column;
   }
 }

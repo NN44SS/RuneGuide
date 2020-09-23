@@ -14,7 +14,7 @@
  <script type="text/javascript" src="Scripts/itemSearch.js"></script>
  <script type="text/javascript" src="Scripts/toolTip.js"></script>
  <script type="text/javascript" src="Scripts/tabFilter.js"></script>
-  <script type="text/javascript" src="Scripts/helperFunctions.js"></script>
+ <script type="text/javascript" src="Scripts/helperFunctions.js"></script>
 
 </head>
 
@@ -122,49 +122,113 @@
     </div>
     <div id="bossContentRight">
       <div id="bossTitleContainer"></div>
-    <!-- Boss Info Panel -->
+      <div id="bossStatsContainer">
 
-      <div id="bossInfoContainer">
-        <div class="bossPanel">
-          <div id="bossPanelGenInfo">
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelComLvl"><span>Combat level:</span></div>
+        <div class="bossStatPanel">
+          <div class="bossStatInfoRow">
+            <span id="bossComLvl">Combat Level: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossHitPoints">HitPoints: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossMembers">Members: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossExamine">Examine: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossMaxHit">Max Hit: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossAggressive">Aggressive: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossPoisonous">Poisonous: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossAttType">Attack Type: </span>
+          </div>
+          <div class="bossStatInfoRow">
+            <span id="bossAttSpeed">Attack Speed: </span>
+          </div>
+        </div>
+
+        <div class="bossStatPanel">
+          <div id=bossGenStatsPillContainer>
+            <div class="bossStatPill">
+              <div class="bossStatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_stab.png" alt="Attack Level">
+              </div>
+              <div class="bossStatPillData">
+                <div id="bossStatAttLvl"></div>
+              </div>
             </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelMemb"><span>Members:</span></div>
+            <div class="bossStatPill">
+              <div class="bossStatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_slash.png" alt="Attack Level">
+              </div>
+              <div class="bossStatPillData">
+                <div id="bossStatMelLvl"></div>
+              </div>
             </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelExam"><span>Examine:</span></div>
+            <div class="bossStatPill">
+              <div class="bossStatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_defense.png" alt="Attack Level">
+              </div>
+              <div class="bossStatPillData">
+                <div id="bossStatDefLvl"></div>
+              </div>
             </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelMaxHit"><span>Max hit:</span></div>
+            <div class="bossStatPill">
+              <div class="bossStatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_mage.png" alt="Attack Level">
+              </div>
+              <div class="bossStatPillData">
+                <div id="bossStatMageLvl"></div>
+              </div>
             </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelAggro"><span>Aggressive:</span></div>
-            </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelPois"><span>Poison:</span></div>
-            </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelAttType"><span>Attack type:</span></div>
-            </div>
-            <div class="bossPanelInfoRow">
-              <div id="bossPanelAttSpeed"><span>Attack speed:</span></div>
+            <div class="bossStatPill">
+              <div class="bossStatPillImg">
+                <img src="Images/TooltipPng/tooltip_image_range.png" alt="Attack Level">
+              </div>
+              <div class="bossStatPillData">
+                <div id="bossStatRangeLvl"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="bossPanel">
-        </div>
 
-        <div class="bossPanel">
-          <div class="bossPanelInfoRow">
-            <div id="bossPanelExam"><span>Examine:</span></div>
-          </div>
+        <div class="bossStatPanel">
+
         </div>
       </div>
+
+
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+<div id="Testflex">
+  <div class="testSection">
+    <span>test1</span>
+  </div>
+  <div class="testSection">
+    <span>test2</span>
+  </div>
+  <div class="testSection">
+    <span>test3</span>
+  </div>
+</div>
+
+
 
   <!-- <div id="inventoryContainer">
     <div id="itemSearchContainer">
