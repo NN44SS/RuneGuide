@@ -218,6 +218,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
                   monsterAttLvl, monsterMeleeLvl, monsterDefLvl, monsterMageLvl, monsterRangedLvl,
                   monsterDefStab, monsterDefSlash, monsterDefCrush, monsterDefMage, monsterDefRanged,
                   monsterBonMeleeStrength, monsterBonMagicStrength, monsterBonRangedStrength)
+
 {
 
   var bossSectionWrapper = document.getElementById('bossSectionWrapper');
@@ -234,6 +235,16 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   var bossInfoPoisonous = document.getElementById('bossPoisonous');
   var bossInfoAttType = document.getElementById('bossAttType');
   var bossInfoAttSpeed = document.getElementById('bossAttSpeed');
+  var bossInfoAttLvl = document.getElementById('bossStatAttLvl');
+  var bossInfoMelLvl = document.getElementById('bossStatMelLvl');
+  var bossInfoDefLvl = document.getElementById('bossStatDefLvl');
+  var bossInfoMageLvl = document.getElementById('bossStatMageLvl');
+  var bossInfoRangeLvl = document.getElementById('bossStatRangeLvl');
+  var bossInfoDefStab = document.getElementById('bossStatDefStab');
+  var bossInfoDefSlash = document.getElementById('bossStatDefSlash');
+  var bossInfoDefCrush = document.getElementById('bossStatDefCrush');
+  var bossInfoDefMage = document.getElementById('bossStatDefMage');
+  var bossInfoDefRange = document.getElementById('bossStatDefRange');
 
 
   //Display the Boss Wrapper
@@ -270,6 +281,28 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   span_AttType.innerHTML = monsterAttType;
   var span_AttSpeed = document.createElement("span");
   span_AttSpeed.innerHTML = monsterAttSpeed;
+  var span_AttLvl = document.createElement("span");
+  span_AttLvl.innerHTML = monsterAttLvl;
+  var span_MelLvl = document.createElement("span");
+  span_MelLvl.innerHTML = monsterMeleeLvl;
+  var span_DefLvl = document.createElement("span");
+  span_DefLvl.innerHTML = monsterDefLvl;
+  var span_MageLvl = document.createElement("span");
+  span_MageLvl.innerHTML = monsterMageLvl;
+  var span_RangeLvl = document.createElement("span");
+  span_RangeLvl.innerHTML = monsterRangedLvl;
+  var span_DefStab = document.createElement("span");
+  span_DefStab.innerHTML = monsterDefStab;
+  var span_DefSlash = document.createElement("span");
+  span_DefSlash.innerHTML = monsterDefSlash;
+  var span_DefCrush = document.createElement("span");
+  span_DefCrush.innerHTML = monsterDefCrush;
+  var span_DefMage = document.createElement("span");
+  span_DefMage.innerHTML = monsterDefMage;
+  var span_DefRange = document.createElement("span");
+  span_DefRange.innerHTML = monsterDefRanged;
+
+
 
   //Append created elements above to the dom
   bossImgContainer.appendChild(monsterImg);
@@ -283,6 +316,17 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   bossInfoPoisonous.appendChild(span_Poisonous);
   bossInfoAttType.appendChild(span_AttType);
   bossInfoAttSpeed.appendChild(span_AttSpeed);
+  bossInfoAttLvl.appendChild(span_AttLvl);
+  bossInfoMelLvl.appendChild(span_MelLvl);
+  bossInfoDefLvl.appendChild(span_DefLvl);
+  bossInfoMageLvl.appendChild(span_MageLvl);
+  bossInfoRangeLvl.appendChild(span_RangeLvl);
+  bossInfoDefStab.appendChild(span_DefStab);
+  bossInfoDefSlash.appendChild(span_DefSlash);
+  bossInfoDefCrush.appendChild(span_DefCrush);
+  bossInfoDefMage.appendChild(span_DefMage);
+  bossInfoDefRange.appendChild(span_DefRange);
+
 }
 
 //Get the attack types from the nested array and return them in string format.
