@@ -5,8 +5,8 @@ var intsToRemove = [139, 252, 274, 630, 965, 2043, 2044, 2918, 2919, 3125, 3126,
                     7397, 7398, 7399, 7400, 7401, 8095, 8244, 8340, 8345, 8346, 8347, 8355, 8356, 8357, 8359, 8360, 8361, 8362,
                     8363, 8370, 8372, 7402, 7403, 7404, 7405, 7406, 7407, 7409, 7410, 7411, 7553, 7554, 7555, 7649, 7679, 7697,
                     7697, 7696, 7699, 7700, 7706, 7708, 7795, 7806, 7852, 7858, 7859, 7860, 7861, 7888, 8027, 8030, 8031, 8060, 8374,
-                    8384, 8388, 8617, 8618, 8621, 8917, 8950, 9021, 9021, 9035, 9046, 9047, 9048, 9258, 9291, 9293, 9296, 9416,
-                    9425, 9569, 9571, 9564];
+                    8384, 8388, 8617, 8618, 8097, 8096, 8098, 8621, 8917, 8950, 9021, 9021, 9035, 9046, 9047, 9048, 9258, 9291, 9293, 9296, 9416,
+                    9425, 9569, 9571, 9564, 10397, 10398, 10400, 10402];
 
 //Initialize boss data.
 function initBossData(){
@@ -221,6 +221,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
 
 {
 
+  debugger;
   var bossSectionWrapper = document.getElementById('bossSectionWrapper');
   var bossImgContainer = document.getElementById('bossImgContainer');
   var bossTitleContainer = document.getElementById('bossTitleContainer');
@@ -245,6 +246,10 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   var bossInfoDefCrush = document.getElementById('bossStatDefCrush');
   var bossInfoDefMage = document.getElementById('bossStatDefMage');
   var bossInfoDefRange = document.getElementById('bossStatDefRange');
+  var bossInfoBonusMel = document.getElementById('bossBonMel');
+  var bossInfoBonusMage = document.getElementById('bossBonMage');
+  var bossInfoBonusRange = document.getElementById('bossBonRanged');
+  var bossSlayerMasters = document.getElementById('slayerMastersContainer');
 
 
   //Display the Boss Wrapper
@@ -301,6 +306,12 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   span_DefMage.innerHTML = monsterDefMage;
   var span_DefRange = document.createElement("span");
   span_DefRange.innerHTML = monsterDefRanged;
+  var span_BonusMel = document.createElement("span");
+  span_BonusMel.innerHTML = monsterBonMeleeStrength;
+  var span_BonusMage = document.createElement("span");
+  span_BonusMage.innerHTML = monsterBonMagicStrength;
+  var span_BonusRange = document.createElement("span");
+  span_BonusRange.innerHTML = monsterBonRangedStrength;
 
 
 
@@ -326,6 +337,46 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   bossInfoDefCrush.appendChild(span_DefCrush);
   bossInfoDefMage.appendChild(span_DefMage);
   bossInfoDefRange.appendChild(span_DefRange);
+  bossInfoBonusMel.appendChild(span_BonusMel);
+  bossInfoBonusMage.appendChild(span_BonusMage);
+  bossInfoBonusRange.appendChild(span_BonusRange);
+
+
+
+  //Populate slayer master images
+  var slayerMasters = getSlayerMasters(monsterId);
+  if(slayerMasters.includes('konar')){
+    var masterImg = document.createElement('img');
+    masterImg.src = 'Images/SlayerMasters/Konar_quo_Maten_chathead.png';
+    masterImg.setAttribute('alt', 'Konar');
+    masterImg.setAttribute('class', 'slayerMasterImg');
+    bossSlayerMasters.appendChild(masterImg);
+  }
+
+  if(slayerMasters.includes('chaeldar')){
+    var masterImg = document.createElement('img');
+    masterImg.src = 'Images/SlayerMasters/Chaeldar_chathead.png';
+    masterImg.setAttribute('alt', 'Chaeldar');
+    masterImg.setAttribute('class', 'slayerMasterImg');
+    bossSlayerMasters.appendChild(masterImg);
+  }
+
+  if(slayerMasters.includes('duradel')){
+    var masterImg = document.createElement('img');
+    masterImg.src = 'Images/SlayerMasters/Duradel_chathead.png';
+    masterImg.setAttribute('alt', 'Duradel');
+    masterImg.setAttribute('class', 'slayerMasterImg');
+    bossSlayerMasters.appendChild(masterImg);
+  }
+
+  if(slayerMasters.includes('nieve')){
+    var masterImg = document.createElement('img');
+    masterImg.src = 'Images/SlayerMasters/Nieve_chathead.png';
+    masterImg.setAttribute('alt', 'Nieve');
+    masterImg.setAttribute('class', 'slayerMasterImg');
+    bossSlayerMasters.appendChild(masterImg);
+  }
+
 
 }
 
@@ -348,5 +399,27 @@ function getAttackTypes(monsterId){
     }
   }
   var returnString = attackTypeString.slice(0, -2);
+  return returnString;
+}
+
+
+function getSlayerMasters(monsterId){
+  for (let i = 0; i < monsterList.length; i++) {
+    var innerArray = monsterList[i]._items.length;
+    for (let z = 0; z < innerArray; z++) {
+      var loopMonsterId = monsterList[i]._items[z].id;
+      if (monsterId == loopMonsterId) {
+        var slayerMasterLength = monsterList[i]._items[z].slayer_masters.length;
+        var slayerMasterString = "";
+        var x = 0;
+        while (x < slayerMasterLength) {
+          var masterString = monsterList[i]._items[z].slayer_masters[x];
+          slayerMasterString += masterString + ', ';
+          x++;
+        }
+      }
+    }
+  }
+  var returnString = slayerMasterString.slice(0, -2);
   return returnString;
 }

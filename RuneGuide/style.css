@@ -309,6 +309,10 @@ body{
     display: flex;
 }
 
+#bossBonusStatsPillContainer {
+    display: flex;
+}
+
 .bossPanelComPillContainer {
   width: 100%;
   background-color: #b38600;
@@ -499,12 +503,17 @@ body{
 }
 
 .bossStatPanel {
-    background-color: coral;
+    background-color: lightslategray;
     min-width: 300px;
 }
 
 .bossStatPillData {
     text-align: center;
+}
+
+.slayerMasterImg {
+    height: 40px;
+    width: 45px;
 }
 
 

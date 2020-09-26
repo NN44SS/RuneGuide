@@ -15,3 +15,29 @@ function listCustomRemoves(intsToRemove, listToFilter){
     }
   }
 }
+
+function checkforUndefined(value){
+  if (value === undefined){
+    value = 0;
+  }
+  return value;
+}
+
+function addOperatorToNumber(value){
+  if (value > 0){
+    value = "+" + value;
+  }
+  return value;
+}
+
+function colorData(value){
+  var returnColor;
+  if (value > 0){
+    returnColor = "green";
+  }else if (value < 0) {
+    returnColor = "red";
+  }else {
+    returnColor = "white";
+  }
+  return returnColor;
+}
