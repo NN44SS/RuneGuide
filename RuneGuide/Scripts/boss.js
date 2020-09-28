@@ -206,6 +206,8 @@ function selectBoss(ev) {
                         monsterAttLvl, monsterMeleeLvl, monsterDefLvl, monsterMageLvl, monsterRangedLvl,
                         monsterDefStab, monsterDefSlash, monsterDefCrush, monsterDefMage, monsterDefRanged,
                         monsterBonMeleeStrength, monsterBonMagicStrength, monsterBonRangedStrength);
+
+      populateMonsterDrops(monsterId);
       }
     }
   }
@@ -221,7 +223,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
 
 {
 
-  debugger;
+
   var bossSectionWrapper = document.getElementById('bossSectionWrapper');
   var bossImgContainer = document.getElementById('bossImgContainer');
   var bossTitleContainer = document.getElementById('bossTitleContainer');
@@ -307,11 +309,11 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   var span_DefRange = document.createElement("span");
   span_DefRange.innerHTML = monsterDefRanged;
   var span_BonusMel = document.createElement("span");
-  span_BonusMel.innerHTML = monsterBonMeleeStrength;
+  span_BonusMel.innerHTML = checkforUndefined(monsterBonMeleeStrength);
   var span_BonusMage = document.createElement("span");
-  span_BonusMage.innerHTML = monsterBonMagicStrength;
+  span_BonusMage.innerHTML = checkforUndefined(monsterBonMagicStrength);
   var span_BonusRange = document.createElement("span");
-  span_BonusRange.innerHTML = monsterBonRangedStrength;
+  span_BonusRange.innerHTML = checkforUndefined(monsterBonRangedStrength);
 
 
 

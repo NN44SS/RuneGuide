@@ -244,10 +244,10 @@ body{
 }
 
 #headerSectionWrapper {
-    background-color: #404040;
-    height: 110px;
-    width: 100%;
-    border-bottom: solid 2px #b38660;
+  background-color: lightslategray;
+  height: 110px;
+  width: 100%;
+  border-bottom: solid 2px white;
 }
 
 
