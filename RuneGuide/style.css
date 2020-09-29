@@ -299,6 +299,7 @@ body{
 #bossPanelContainer {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 #bossGenStatsPillContainer {
@@ -311,6 +312,23 @@ body{
 
 #bossBonusStatsPillContainer {
     display: flex;
+}
+
+#bossDropWraper {
+    width: 50%;
+    margin: auto;
+    display: none;
+}
+
+#bossDropHeader {
+    color: white;
+    justify-content: space-evenly;
+    background-color: lightslategray;
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+    width: 50%;
+    margin: auto;
+    display: none;
 }
 
 .bossPanelComPillContainer {
@@ -516,17 +534,31 @@ body{
     width: 45px;
 }
 
-
-
-div#Testflex {
+.bossDropRow {
     display: flex;
-    flex-wrap: wrap;
+    color: white;
+    margin: 5px 0 5px 0;
+    justify-content: space-evenly;
+    background-color: lightslategray;
+    border-radius: 10px;
 }
 
-.testSection {
-    width: 400px;
-    background-color: aquamarine;
+.bossDropImgContainer {
+    flex: 25%;
 }
+
+.bossDropNameContainer {
+    flex: 25%;
+}
+
+.bossDropQuantityContainer {
+    flex: 25%;
+}
+
+.bossDropRarityContainer {
+    flex: 25%;
+}
+
 
 
 

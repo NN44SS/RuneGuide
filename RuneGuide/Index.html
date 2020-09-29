@@ -16,6 +16,7 @@
  <script type="text/javascript" src="Scripts/toolTip.js"></script>
  <script type="text/javascript" src="Scripts/tabFilter.js"></script>
  <script type="text/javascript" src="Scripts/helperFunctions.js"></script>
+<script type="text/javascript" src="Scripts/contentControls.js"></script>
 
 </head>
 
@@ -298,23 +299,20 @@
 </div>
 
 
-
-
-
-
-
-
-<div id="Testflex">
-  <div class="testSection">
-    <span>test1</span>
-  </div>
-  <div class="testSection">
-    <span>test2</span>
-  </div>
-  <div class="testSection">
-    <span>test3</span>
-  </div>
+<div id="bossDropHeader" onclick="toggleDropSection();">
+    <span>DROPS</span>
 </div>
+<div id="bossDropWraper" style="display: none;">
+
+  <!-- populated from bossDrops.js -->
+</div>
+
+
+
+
+
+
+
 
 
 
