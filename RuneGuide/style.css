@@ -266,15 +266,17 @@ body{
 }
 
 #bossImgContainer {
-    height: 100%;
-    max-width: 400px;
-    min-width: 200px;
+    height: 75%;
+    max-width: 300px;
+    min-width: 300px;
+    margin: auto;
+    padding: 50px 0 0 0;
 }
 
 #bossTitleContainer {
     font-size: 6rem;
     text-align: center;
-    padding: 20px;
+    padding: 10px 0 10px 0;
 }
 
 #bossInfoContainer {
@@ -286,6 +288,7 @@ body{
 #bossStatsContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #bossContentLeft{
@@ -304,14 +307,17 @@ body{
 
 #bossGenStatsPillContainer {
     display: flex;
+    justify-content: center;
 }
 
 #bossAttStatsPillContainer {
     display: flex;
+    justify-content: center;
 }
 
 #bossBonusStatsPillContainer {
     display: flex;
+    justify-content: center;
 }
 
 #bossDropWraper {
@@ -330,6 +336,15 @@ body{
     margin: auto;
     display: none;
 }
+
+#bossGenStatContainer {
+    background-color: black;
+    border-radius: 10px;
+    margin: 0 9px 0 8px;
+    padding: 0 0 0px 0;
+    border: 2px solid white;
+}
+
 
 .bossPanelComPillContainer {
   width: 100%;
@@ -523,10 +538,19 @@ body{
 .bossStatPanel {
     background-color: lightslategray;
     min-width: 300px;
+    min-height: 300px;
+    margin: 0 3px 0 3px;
+    border-radius: 10px;
+    border: solid 2px white;
 }
 
 .bossStatPillData {
     text-align: center;
+    background-color: black;
+    border-radius: 2px;
+    height: 20px;
+    font-size: 15px;
+    padding: 2px 0 0 0;
 }
 
 .slayerMasterImg {
@@ -551,19 +575,58 @@ body{
     flex: 25%;
 }
 
-.bossDropQuantityContainer {
-    flex: 25%;
+.bossStatInfoRow {
+    margin: 11px 0 8px 8px;
+    font-size: 14px;
 }
 
 .bossDropRarityContainer {
     flex: 25%;
 }
 
+.bossStatInfoRow {
+    margin: 14px 0 9px 13px;
+    font-size: 14px;
+}
 
+.bossStatPanelHeader {
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 3px 0 3px 0;
+    width: 94%;
+    margin: 5px auto 5px auto;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.bossPanelHeaderTxt {
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+}
+
+.bossStatPillImg {
+    border-radius: 6px;
+    margin: 0 3px 0 3px;
+}
+
+.bossStatPill {
+    background-color: white;
+    border-radius: 4px;
+    margin: 0 3px 0 3px;
+    border: solid 2px black;
+}
 
 
 @media screen and (max-width: 700px) {
   #bossContentRight, #bossContentLeft{
     flex-direction: column;
   }
+
+  .bossStatPanel {
+    margin: 20px 0 0 0;
+}
+
 }

@@ -127,38 +127,40 @@
       <div id="bossStatsContainer">
 
         <div class="bossStatPanel">
-          <div class="bossStatInfoRow">
-            <span id="bossComLvl">Combat Level: </span>
+          <div class="bossStatPanelHeader">
+            <span class="bossPanelHeaderTxt">General Stats</span>
           </div>
-          <div class="bossStatInfoRow">
-            <span id="bossHitPoints">HitPoints: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossMembers">Members: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossExamine">Examine: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossMaxHit">Max Hit: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossAggressive">Aggressive: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossPoisonous">Poisonous: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossAttType">Attack Type: </span>
-          </div>
-          <div class="bossStatInfoRow">
-            <span id="bossAttSpeed">Attack Speed: </span>
+          <div id="bossGenStatContainer">
+            <div class="bossStatInfoRow">
+              <span id="bossComLvl"><b>Combat Level:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossHitPoints"><b>HitPoints:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossMembers"><b>Members:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossMaxHit"><b>Max Hit:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossAggressive"><b>Aggressive:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossPoisonous"><b>Poisonous:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossAttType"><b>Attack Type:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <span id="bossAttSpeed"><b>Attack Speed:  </b></span>
+            </div>
           </div>
         </div>
 
         <div class="bossStatPanel">
           <div class="bossStatPanelHeader">
-            <span>Combat Stats</span>
+            <span class="bossPanelHeaderTxt">Combat Stats</span>
           </div>
           <div id=bossGenStatsPillContainer>
             <div class="bossStatPill">
@@ -204,7 +206,7 @@
           </div>
 
           <div class="bossStatPanelHeader">
-            <span>Defense Stats</span>
+            <span class="bossPanelHeaderTxt">Defense Stats</span>
           </div>
           <div id=bossAttStatsPillContainer>
             <div class="bossStatPill">
@@ -249,7 +251,7 @@
             </div>
           </div>
           <div class="bossStatPanelHeader">
-            <span>Bonus Stats</span>
+            <span class="bossPanelHeaderTxt">Bonus Stats</span>
           </div>
           <div id=bossBonusStatsPillContainer>
             <div class="bossStatPill">
@@ -281,15 +283,15 @@
 
         <div class="bossStatPanel">
           <div class="bossStatPanelHeader">
-            <span>Recommended Stats</span>
-            <div id="RecommendedStatsContainer">
-              <img src="Images/SkillBubbles/Mage60.png">
-              <img src="Images/SkillBubbles/Range60.png">
-              <img src="Images/SkillBubbles/Def60.png">
-            </div>
+            <span class="bossPanelHeaderTxt">Recommended Stats</span>
+          </div>
+          <div id="RecommendedStatsContainer">
+            <img src="Images/SkillBubbles/Mage60.png">
+            <img src="Images/SkillBubbles/Range60.png">
+            <img src="Images/SkillBubbles/Def60.png">
           </div>
           <div class="bossStatPanelHeader">
-            <span>Slayer Masters</span>
+            <span class="bossPanelHeaderTxt">Slayer Masters</span>
           </div>
           <div id="slayerMastersContainer"></div><!-- populated in boss.js -->
         </div>

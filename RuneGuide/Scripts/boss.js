@@ -323,7 +323,6 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
   bossInfoComLvl.appendChild(span_CombatLvl);
   bossInfoHitPoints.appendChild(span_Hitpoints);
   bossInfoMembers.appendChild(span_Members);
-  bossInfoExamine.appendChild(span_Examine);
   bossInfoMaxHit.appendChild(span_MaxHit);
   bossInfoAggressive.appendChild(span_Aggresive);
   bossInfoPoisonous.appendChild(span_Poisonous);
