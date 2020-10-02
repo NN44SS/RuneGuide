@@ -62,6 +62,7 @@ function createDropPanel(){
     var bossDropImgContainer = document.createElement('div');
     bossDropImgContainer.setAttribute('class', 'bossDropImgContainer');
     var dropImg = document.createElement('img');
+    dropImg.setAttribute('class', 'bossDropDataTxt');
     dropImg.src = "https://www.osrsbox.com/osrsbox-db/items-icons/"+ drop.dropID +".png";
     bossDropImgContainer.appendChild(dropImg);
 
@@ -69,6 +70,7 @@ function createDropPanel(){
     var bossDropNameContainer = document.createElement('div');
     bossDropNameContainer.setAttribute('class', 'bossDropNameContainer');
     var bossDropName = document.createElement('span');
+    bossDropName.setAttribute('class', 'bossDropDataTxt');
     bossDropName.innerHTML = drop.dropName;
     bossDropNameContainer.appendChild(bossDropName);
 
@@ -76,6 +78,7 @@ function createDropPanel(){
     var bossDropQuantityContainer = document.createElement('div');
     bossDropQuantityContainer.setAttribute('class', 'bossDropQuantityContainer');
     var bossDropQuantity = document.createElement('span');
+    bossDropQuantity.setAttribute('class', 'bossDropDataTxt');
     bossDropQuantity.innerHTML = drop.dropQuantity;
     bossDropQuantityContainer.appendChild(bossDropQuantity);
 
@@ -83,6 +86,7 @@ function createDropPanel(){
     var bossDropRarityContainer = document.createElement('div');
     bossDropRarityContainer.setAttribute('class', 'bossDropRarityContainer');
     var bossDropRarity = document.createElement('span');
+    bossDropRarity.setAttribute('class', 'bossDropDataTxt');
     bossDropRarity.innerHTML = drop.dropRarity;
     bossDropRarityContainer.appendChild(bossDropRarity);
 

@@ -579,23 +579,35 @@ body{
 
 .bossDropRow {
     display: flex;
-    color: white;
+    color: black;
     margin: 5px 0 5px 0;
     justify-content: space-evenly;
-    background-color: lightslategray;
+    background-color: white;
     border-radius: 10px;
+    border: 3px solid lightslategray;
+    padding: 2px 0 2px 0;
+    font-weight: 700;
+    font-size: medium;
 }
 
 .bossDropImgContainer {
     flex: 25%;
+    display: flex;
 }
 
 .bossDropNameContainer {
     flex: 25%;
+    display: flex;
 }
 
 .bossDropQuantityContainer {
     flex: 25%;
+    display: flex;
+}
+
+.bossDropRarityContainer {
+    flex: 25%;
+    display: flex;
 }
 
 .bossStatInfoRow {
@@ -603,9 +615,6 @@ body{
     font-size: 14px;
 }
 
-.bossDropRarityContainer {
-    flex: 25%;
-}
 
 .bossStatInfoRow {
     margin: 14px 0 9px 13px;
@@ -640,6 +649,12 @@ body{
     border-radius: 4px;
     margin: 0 3px 0 3px;
     border: solid 2px black;
+}
+
+.bossDropDataTxt {
+    display: inline-flex;
+    align-items: center;
+    margin: auto;
 }
 
 
