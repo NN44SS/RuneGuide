@@ -5,7 +5,7 @@ html {
 body{
   background-color: black;
   margin: 0px;
-  font-size: 1rem; // 12px
+  font-size: 1rem;
 }
 
 /* Dark Gray - #404040 */
@@ -345,6 +345,25 @@ body{
     border: 2px solid white;
 }
 
+#RecommendedStatsContainer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    margin: 6px 9px 6px 9px;
+    border-radius: 6px;
+    padding: 15px 0 15px 0;
+    border: 2px solid white;
+}
+
+#slayerMastersContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    margin: 6px 9px 6px 9px;
+    border-radius: 6px;
+    padding: 15px 0 15px 0;
+    border: 2px solid white;
+}
 
 .bossPanelComPillContainer {
   width: 100%;
@@ -555,7 +574,7 @@ body{
 
 .slayerMasterImg {
     height: 40px;
-    width: 45px;
+    width: 40px;
 }
 
 .bossDropRow {
@@ -572,6 +591,10 @@ body{
 }
 
 .bossDropNameContainer {
+    flex: 25%;
+}
+
+.bossDropQuantityContainer {
     flex: 25%;
 }
 
@@ -602,7 +625,7 @@ body{
 }
 
 .bossPanelHeaderTxt {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: black;
 }
