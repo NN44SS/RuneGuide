@@ -200,7 +200,8 @@ function selectBoss(ev) {
       var monsterBonRangedStrength = monsterList[i]._items[z].ranged_strength;
       if (bossId == monsterId) {
       //If bossID matches a monster in the list
-      bossGridWrapper.style.display = "none";
+
+      hideBossSelectGrid();
       populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl, monsterExamine, monsterMaxHit,
                         monsterAggressive, monsterPoisonous, monsterAttType, monsterAttSpeed, monsterHitPoints,
                         monsterAttLvl, monsterMeleeLvl, monsterDefLvl, monsterMageLvl, monsterRangedLvl,
@@ -208,6 +209,7 @@ function selectBoss(ev) {
                         monsterBonMeleeStrength, monsterBonMagicStrength, monsterBonRangedStrength);
 
       populateMonsterDrops(monsterId);
+      populateBossCustomData(monsterId);//customBossContent.js
       }
     }
   }
@@ -255,8 +257,8 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
 
 
   //Display the Boss Wrapper
-  bossSectionWrapper.style.display = "inline";
-
+  showBossInfoPanel();
+  
   //populate boss image
   var monsterImg = document.createElement('img');
   var imgSrc = setBossImgSrc(monsterId);
@@ -377,7 +379,6 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
     masterImg.setAttribute('class', 'slayerMasterImg');
     bossSlayerMasters.appendChild(masterImg);
   }
-
 
 }
 

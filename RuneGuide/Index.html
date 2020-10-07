@@ -26,40 +26,6 @@
   // getItems();
   initBossData();
 
-  function bossGridReset() {
-
-    var vorkLink = document.getElementById("vorkathTile");
-    var zulLink = document.getElementById("zulrahTile");
-    var krakLink = document.getElementById("krakenTile");
-    var test = document.getElementById("bossImgWrapper");
-    //Clear the BossWrapper and content when the grid button is clicked.
-    clearDiv("bossImgWrapper");
-    clearDiv("bossInfoWrapper");
-
-    //Show the Boss Grid when the button is clicked.
-    var bossGridContainer = document.getElementById("BossSelectionGrid");
-    bossGridContainer.style.display = "flex";
-  }
-
-
-  function bossSelect(bossID) {
-    var bossGridContainer = document.getElementById("BossSelectionGrid");
-    bossGridContainer.style.display = "none";
-
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "Scripts/Boss.js";
-    document.getElementsByTagName("head")[0].appendChild(script);
-
-    createBossPortrait(bossID);
-    createBossInfo(bossID);
-
-    var bossGridContainer = document.getElementById("bossInfoWrapper");
-    bossGridContainer.style.display = "inline";
-
-    var bossContainer = document.getElementById("bossImgWrapper");
-    bossContainer.style.display = "inline";
-  }
 
   function clearDiv(elementID) {
     //Clear contents of an element
@@ -108,7 +74,7 @@
 
 <header>
     <div id="headerSectionWrapper">
-
+      <img src="Images/RuneGuide_Logo.png" alt="RuneGuide" id="headerLogo" onclick="resetBossGrid();">
     </div>
 </header>
 
@@ -308,13 +274,6 @@
 
 
 
-
-
-
-
-
-
-
   <!-- <div id="inventoryContainer">
     <div id="itemSearchContainer">
       <input type="text" id="itemFilt" onkeyup="filterItems();" placeholder="Search Item...">
@@ -351,7 +310,6 @@
     </div>
   </div> -->
 
-  <!-- <button class="gridBtn" onclick="bossGridReset();">Boss</button> -->
 
 </content>
 
