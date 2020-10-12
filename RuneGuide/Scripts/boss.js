@@ -258,7 +258,7 @@ function populateBossInfo(monsterName, monsterId, monsterMembers, monsterComLvl,
 
   //Display the Boss Wrapper
   showBossInfoPanel();
-  
+
   //populate boss image
   var monsterImg = document.createElement('img');
   var imgSrc = setBossImgSrc(monsterId);
@@ -424,4 +424,9 @@ function getSlayerMasters(monsterId){
   }
   var returnString = slayerMasterString.slice(0, -2);
   return returnString;
+}
+
+
+function bossVueTest(){
+  return 'test2';
 }

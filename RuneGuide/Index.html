@@ -18,6 +18,9 @@
  <script type="text/javascript" src="Scripts/helperFunctions.js"></script>
  <script type="text/javascript" src="Scripts/contentControls.js"></script>
  <script type="text/javascript" src="Scripts/customBossContent.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
 
 </head>
 
@@ -100,6 +103,9 @@
           <div id="bossGenStatContainer">
             <div class="bossStatInfoRow">
               <span id="bossComLvl"><b>Combat Level:  </b></span>
+            </div>
+            <div class="bossStatInfoRow">
+              <div id="vueTest">{{ testText }}</div>
             </div>
             <div class="bossStatInfoRow">
               <span id="bossHitPoints"><b>HitPoints:  </b></span>
@@ -490,6 +496,7 @@
  <!-- 3331 -->
 
 <script type="text/javascript" src="Scripts/Boss.js"></script>
+<script type="text/javascript" src="Scripts/Vue.js"></script>
 <script type="text/javascript" src="Scripts/itemSearch.js"></script>
 </body>
 </html>
